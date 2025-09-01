@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import type { Answer, Language, ProcessedSection, ProcessedQuestion } from './types';
 import { RAW_SECTIONS } from './data/questions';
+import { SECTION_ORDER } from './config/sectionOrder';
 
 export function useLocalStorage<T>(key: string, initialValue: T): [T, React.Dispatch<React.SetStateAction<T>>] {
   const [value, setValue] = useState<T>(() => {
@@ -24,7 +25,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, React.Disp
 
 export function useSections(lang: Language): ProcessedSection[] {
   return useMemo(() => {
-    return RAW_SECTIONS.map((s) => ({
+    const processedSections = RAW_SECTIONS.map((s) => ({
       id: s.id,
       title: s.title[lang],
       questions: s.questions.map((q) => ({
@@ -34,6 +35,21 @@ export function useSections(lang: Language): ProcessedSection[] {
         sectionTitle: s.title[lang],
       })),
     }));
+
+    const ordered: ProcessedSection[] = [];
+    const remaining: ProcessedSection[] = [];
+
+    for (const section of processedSections) {
+      if (SECTION_ORDER.includes(section.id)) {
+        ordered.push(section);
+      } else {
+        remaining.push(section);
+      }
+    }
+
+    ordered.sort((a, b) => SECTION_ORDER.indexOf(a.id) - SECTION_ORDER.indexOf(b.id));
+
+    return [...ordered, ...remaining];
   }, [lang]);
 }
 
