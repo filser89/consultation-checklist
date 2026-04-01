@@ -2,247 +2,193 @@ import type { RawSection } from '../types';
 
 export const RAW_SECTIONS: RawSection[] = [
   {
-    id: 'vision',
-    title: { en: 'Product Vision' },
+    id: 'current-business',
+    title: { en: 'Current Business' },
     questions: [
       {
         id: 'q1',
         text: {
-          en: 'Child experience: plays -> their location is recorded',
+          en: 'Are you already selling these products?',
         },
       },
       {
         id: 'q2',
         text: {
-          en: 'AI generated reports based on child records',
+          en: 'Where do you sell them currently? (Amazon, retail, another website?)',
         },
       },
       {
         id: 'q3',
         text: {
-          en: 'Admin dashboard + parent-facing app for reports',
+          en: "What's your current monthly sales volume?",
         },
       },
       {
         id: 'q4',
         text: {
-          en: 'Ask to confirm the vision',
+          en: "What's your average order value?",
         },
       },
+    ],
+  },
+  {
+    id: 'target-customer',
+    title: { en: 'Target Customer' },
+    questions: [
       {
         id: 'q5',
         text: {
-          en: 'Technical explanation (event created, updated and stored in local device, syncs with server when needed). Mention that this is based on the Tech Spec',
+          en: 'Who is your ideal customer? (profile, location)',
         },
       },
       {
         id: 'q6',
         text: {
-          en: 'Ask to confirm that this is the way',
+          en: 'What concerns bring them to you? (child not sleeping, focus issues, etc.)',
         },
       },
       {
         id: 'q7',
         text: {
-          en: 'Confirm that the wrist band should also record pulse',
+          en: 'Why do they choose you over competitors?',
         },
       },
     ],
   },
   {
-    id: 'business',
-    title: { en: 'Understand His Business' },
+    id: 'marketing',
+    title: { en: 'Marketing' },
     questions: [
       {
         id: 'q8',
         text: {
-          en: 'How many kids visit per day on average?',
+          en: 'How do customers find you today? (ads, organic, word of mouth, social?)',
         },
       },
       {
         id: 'q9',
         text: {
-          en: 'How many kids are in the space at the same time (peak)?',
+          en: "What's your monthly ads budget?",
         },
       },
       {
         id: 'q10',
         text: {
-          en: 'How long does an average visit last?',
+          en: 'Is SEO a priority for you?',
         },
       },
       {
         id: 'q11',
         text: {
-          en: 'How many distinct zones/areas do you have?',
+          en: 'Do you have an email list? How big?',
         },
       },
+    ],
+  },
+  {
+    id: 'project-expectations',
+    title: { en: 'Project Expectations' },
+    questions: [
       {
         id: 'q12',
         text: {
-          en: 'How often do kids move between zones? (Every few minutes? Every 15-30 mins?)',
+          en: 'How many products at launch? (just the 3 supplements?)',
         },
       },
       {
         id: 'q13',
         text: {
-          en: 'Do you have WiFi/internet throughout the space?',
+          en: 'Do you have product content ready? (descriptions, images, ingredients)',
         },
       },
-    ],
-  },
-  {
-    id: 'technical',
-    title: { en: 'Explain The Core Technical Challenge' },
-    questions: [
       {
         id: 'q14',
         text: {
-          en: 'Entry/exit tracking is easy - RFID scan at door',
+          en: "What's your expected order volume in the first few months?",
         },
       },
       {
         id: 'q15',
         text: {
-          en: 'Tracking which SPECIFIC kid is in which zone is the hard part',
+          en: "What's your expected visitor traffic in the first few months?",
         },
       },
       {
         id: 'q16',
         text: {
-          en: 'Simple motion sensors can only count people, not identify individuals',
+          en: 'Are you running ads at launch or growing organically?',
         },
       },
+    ],
+  },
+  {
+    id: 'design',
+    title: { en: 'Design' },
+    questions: [
       {
         id: 'q17',
         text: {
-          en: 'Explain the three options: BLE/UWB tags ($5K-15K), Computer Vision ($30K-100K+), RFID at every zone (expensive + unreliable)',
+          en: 'Is this mockup the final design or a rough concept?',
         },
       },
       {
         id: 'q18',
         text: {
-          en: 'Each approach has different costs, accuracy, and complexity',
+          en: 'Will I need to design the website based on the mockup?',
         },
       },
-    ],
-  },
-  {
-    id: 'budget',
-    title: { en: 'Critical Business Questions' },
-    questions: [
       {
         id: 'q19',
         text: {
-          en: "What's your timeline expectation? (3 months? 6 months? 1 year?)",
+          en: 'Do you have brand assets? (logo files, fonts, color codes)',
         },
       },
       {
         id: 'q20',
         text: {
-          en: 'How much are you ready to invest monthly?',
+          en: 'Do you have product photography?',
         },
       },
+    ],
+  },
+  {
+    id: 'quiz-ai',
+    title: { en: 'Quiz & AI' },
+    questions: [
       {
         id: 'q21',
         text: {
-          en: "What's your total project budget including hardware?",
+          en: 'Is the recommendation logic already defined?',
         },
       },
       {
         id: 'q22',
         text: {
-          en: 'Would parents pay extra for this feature? How much?',
+          en: 'Can you provide examples of how you want the recommendation explanations to sound?',
+        },
+      },
+      {
+        id: 'q23',
+        text: {
+          en: 'Do you need to save quiz results to a database for later analysis?',
         },
       },
     ],
   },
   {
-    id: 'planning',
-    title: { en: 'Propose Planning Phase' },
+    id: 'other',
+    title: { en: 'Other Questions' },
     questions: [
-      {
-        id: 'q23',
-        text: {
-          en: 'I see the most important thing now is to plan everything properly. Because quick decisions cost a lot especially when we are dealing with hardware.',
-        },
-      },
       {
         id: 'q24',
         text: {
-          en: 'The project logically can be broken down into 3 parts: 1. Hardware 2. Server + AI 3. Admin + parents app',
+          en: 'Do customers need accounts, or guest checkout only?',
         },
       },
       {
         id: 'q25',
         text: {
-          en: 'For each of 3 parts we need to do same things:',
-        },
-      },
-      {
-        id: 'q26',
-        text: {
-          en: 'First of all, write up clear requirements. Because before we start looking for something we need to understand what it is. This is the ideal option.',
-        },
-      },
-      {
-        id: 'q27',
-        text: {
-          en: 'Then we mark the must-have requirements and nice to have. Or we can use the points system.',
-        },
-      },
-      {
-        id: 'q28',
-        text: {
-          en: 'Then we find solutions on the market. Understand which we can adapt. Understand the trade offs, pros and cons.',
-        },
-      },
-      {
-        id: 'q29',
-        text: {
-          en: 'For hardware also: Check different suppliers. What they offer, minimal order quantity.',
-        },
-      },
-      {
-        id: 'q30',
-        text: {
-          en: 'Then we evaluate custom-built solution. We will not be able to estimate this precisely, but at least we will know what to expect.',
-        },
-      },
-      {
-        id: 'q31',
-        text: {
-          en: "So this is a very brief explanation of what needs to be done. If you are interested in this plan, let's meet again on Monday evening and I will prepare the offer for you.",
-        },
-      },
-    ],
-  },
-  {
-    id: 'gauge',
-    title: { en: 'Listen & Gauge Interest' },
-    questions: [
-      {
-        id: 'q32',
-        text: {
-          en: "If agrees: 'Great, I'll send proposal by [date]'",
-        },
-      },
-      {
-        id: 'q33',
-        text: {
-          en: "If hesitates: 'What concerns do you have about starting with planning?'",
-        },
-      },
-      {
-        id: 'q34',
-        text: {
-          en: "If says too expensive: 'What budget did you have in mind for the whole project?'",
-        },
-      },
-      {
-        id: 'q35',
-        text: {
-          en: "If says need to think: 'What questions can I answer to help you decide?'",
+          en: 'Do you have the copy ready? (page content, product descriptions, legal disclaimers, privacy policy, terms of service)',
         },
       },
     ],
